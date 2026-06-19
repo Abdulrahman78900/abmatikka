@@ -403,25 +403,62 @@ html {
 
 @media (max-width: 768px) {
 
-  /* NAVIGATION */
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px 18px;
-    gap: 10px;
+/* NAV BASE */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* HAMBURGER (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* DESKTOP NAV */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
   }
 
   .nav-links {
-    display: flex;
+    position: absolute;
+    top: 60px;
+    right: 18px;
+    background: #0f1115;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+
     flex-direction: column;
     gap: 10px;
-    width: 100%;
+
+    padding: 12px;
+    width: 200px;
+
+    display: none; /* hidden by default */
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .nav-links a {
-    margin-left: 0;
-    padding: 10px 0;
+    padding: 10px;
+    margin: 0;
   }
+}
 
   /* HERO */
   .hero {
