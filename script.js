@@ -4,6 +4,17 @@ window.addEventListener('load', () => {
   window.scrollTo(0, 0);
 });
 
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+}
+
 // Smooth scroll navigation with configurable offsets
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", (e) => {
@@ -28,6 +39,12 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
     link.classList.add("clicked");
     setTimeout(() => link.classList.remove("clicked"), 200);
+
+    // Close hamburger menu on mobile when a link is clicked
+    if (hamburger && navLinks) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    }
   });
 });
 

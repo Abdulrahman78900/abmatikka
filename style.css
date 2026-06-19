@@ -396,3 +396,194 @@ html {
   width: auto;
   display: block;
 }
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #f5f5f5;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav {
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #0f1115;
+    border-bottom: 1px solid #222;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+    padding: 12px 0;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 20px;
+    margin-left: 0;
+    opacity: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-links a.btn-small {
+    background: #ffffff;
+    color: #000;
+    border-radius: 6px;
+    margin: 12px 20px;
+    border: none;
+  }
+
+  .hero {
+    padding: 100px 20px 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .hero p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .btn-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section {
+    padding: 50px 20px;
+  }
+
+  .pricing-clean {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pricing-item {
+    max-width: 100%;
+  }
+
+  .form {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-group {
+    gap: 4px;
+  }
+
+  .form input,
+  .form select,
+  .form textarea {
+    padding: 12px 12px;
+    font-size: 16px;
+  }
+
+  .faq-question {
+    padding: 14px 14px;
+    font-size: 14px;
+  }
+
+  .faq-answer {
+    padding: 0 14px;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 14px 14px 14px;
+  }
+
+  .subsection {
+    margin-top: 16px;
+  }
+
+  .subsection h3 {
+    font-size: 15px;
+  }
+
+  .logo img {
+    height: 24px;
+  }
+
+  #about {
+    scroll-margin-top: 70px;
+  }
+
+  #pricing {
+    scroll-margin-top: 70px;
+  }
+
+  #faq {
+    scroll-margin-top: 70px;
+  }
+
+  #contact {
+    scroll-margin-top: 70px;
+  }
+}
