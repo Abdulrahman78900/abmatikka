@@ -396,3 +396,105 @@ html {
   width: auto;
   display: block;
 }
+
+/* =========================
+   MOBILE RESPONSIVE FIXES
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* NAVIGATION */
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 18px;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 90px 18px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 60px 18px;
+  }
+
+  /* PRICING */
+  .pricing-item {
+    max-width: 100%;
+    padding: 18px;
+  }
+
+  /* FAQ */
+  .faq-question {
+    font-size: 14px;
+  }
+
+  /* FORM */
+  .form {
+    max-width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  /* TYPOGRAPHY */
+  h1 {
+    line-height: 1.2;
+  }
+
+  h2 {
+    line-height: 1.3;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  /* LOGO */
+  .logo img {
+    height: 28px;
+    max-width: 140px;
+  }
+}
