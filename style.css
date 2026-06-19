@@ -1,7 +1,3 @@
-/* =========================
-   BASE RESET
-   ========================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -15,184 +11,95 @@ body {
   line-height: 1.6;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* =========================
-   NAV (DESKTOP BASE)
-   ========================= */
+a { color: inherit; text-decoration: none; }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 20px 40px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  z-index: 9999;
-  background: #0f1115;
-  border-bottom: 1px solid #222;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:9999;
+  background:#0f1115;
+  border-bottom:1px solid #222;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 30px;
-  width: auto;
-  display: block;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
+.logo { font-weight:700; }
 
 .nav-links a {
-  opacity: 0.8;
-  transition: transform 0.15s ease, opacity 0.2s ease;
-}
-
-.nav-links a.clicked {
-  transform: scale(0.92);
-  opacity: 0.6;
+  margin-left:20px;
+  opacity:0.8;
 }
 
 .btn-small {
-  padding: 6px 12px;
-  background: #ffffff;
-  color: #000;
-  border-radius: 6px;
+  padding:6px 12px;
+  background:#ffffff;
+  color:#000;
+  border-radius:6px;
 }
-
-/* =========================
-   HAMBURGER (DESKTOP HIDDEN)
-   ========================= */
-
-.hamburger {
-  display: none;
-
-  width: 42px;
-  height: 42px;
-
-  border-radius: 10px;
-
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
-  color: #fff;
-  font-size: 20px;
-
-  cursor: pointer;
-
-  align-items: center;
-  justify-content: center;
-
-  transition: 0.2s ease;
-}
-
-.hamburger:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-1px);
-}
-
-/* =========================
-   HERO
-   ========================= */
 
 .hero {
-  position: relative;
-  padding: 120px 40px;
-  text-align: center;
-  overflow: hidden;
+  position:relative;
+  padding:120px 40px;
+  text-align:center;
+  overflow:hidden;
 }
 
 .hero-bg {
-  position: absolute;
-  inset: 0;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
   background:
+    -webkit-radial-gradient(20% 20%, circle, #1a1f2e, transparent 40%),
+    -webkit-radial-gradient(80% 70%, circle, #1b2a3a, transparent 40%),
     radial-gradient(circle at 20% 20%, #1a1f2e, transparent 40%),
     radial-gradient(circle at 80% 70%, #1b2a3a, transparent 40%);
-  opacity: 0.8;
+  opacity:0.8;
 }
 
-.hero-content {
-  position: relative;
-  max-width: 800px;
-  margin: auto;
-}
+.hero-content { position:relative; max-width:800px; margin:auto; }
 
-.hero h1 {
-  font-size: 42px;
-}
+.hero h1 { font-size:42px; }
 
-.hero-buttons {
-  margin-top: 20px;
-}
+.hero-buttons { margin-top:20px; }
 
 .btn {
-  background: #fff;
-  color: #000;
-  padding: 10px 18px;
-  border-radius: 8px;
-  margin-right: 10px;
+  background:#fff;
+  color:#000;
+  padding:10px 18px;
+  border-radius:8px;
+  margin-right:10px;
 }
 
 .btn-secondary {
-  border: 1px solid #fff;
-  padding: 10px 18px;
-  border-radius: 8px;
+  border:1px solid #fff;
+  padding:10px 18px;
+  border-radius:8px;
 }
-
-/* =========================
-   SECTIONS
-   ========================= */
 
 .section {
-  padding: 80px 40px;
-  max-width: 1000px;
-  margin: auto;
+  padding:80px 40px;
+  max-width:1000px;
+  margin:auto;
 }
 
-.dark {
-  background: #121622;
+.dark { background:#121622; }
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
 }
 
-.subsection {
-  margin-top: 20px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+.card {
+  padding:20px;
+  border:1px solid #2a2a2a;
+  border-radius:10px;
 }
-
-.subsection h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-  opacity: 0.9;
-}
-
-.subsection p,
-.subsection li {
-  font-size: 14px;
-  opacity: 0.7;
-  line-height: 1.6;
-}
-
-.subsection ul {
-  padding-left: 18px;
-}
-
-/* =========================
-   PRICING
-   ========================= */
 
 .pricing-clean {
   display: flex;
@@ -204,9 +111,11 @@ a {
 
 .pricing-item {
   width: 100%;
-  max-width: 420px;
+  max-width: 420px;     /* same limit for both */
+  box-sizing: border-box;
 
   text-align: center;
+
   padding: 24px;
   border-radius: 14px;
 
@@ -215,6 +124,7 @@ a {
 }
 
 .pricing-item:hover {
+  -webkit-transform: translateY(-3px);
   transform: translateY(-3px);
   border-color: rgba(255, 255, 255, 0.18);
 }
@@ -246,10 +156,30 @@ a {
   font-size: 13px;
   opacity: 0.6;
 }
+.highlight {
+  border:2px solid #fff;
+}
 
-/* =========================
-   FAQ
-   ========================= */
+.form {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-width:500px;
+}
+
+input, select, textarea {
+  padding:10px;
+  border-radius:6px;
+  border:none;
+}
+
+button {
+  padding:12px;
+  background:#fff;
+  color:#000;
+  border:none;
+  border-radius:6px;
+}
 
 .faq-clean {
   margin-top: 20px;
@@ -258,6 +188,7 @@ a {
   gap: 12px;
 }
 
+/* container */
 .faq-item {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -270,6 +201,7 @@ a {
   border-color: rgba(255, 255, 255, 0.18);
 }
 
+/* question */
 .faq-question {
   width: 100%;
   display: flex;
@@ -280,39 +212,50 @@ a {
   border: none;
 
   padding: 16px 18px;
+
   color: #f5f5f5;
   font-size: 15px;
+  font-weight: 500;
+
   cursor: pointer;
 }
 
 .faq-icon {
   font-size: 16px;
   opacity: 0.6;
-  transition: transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease, transform 0.25s ease;
 }
 
+/* answer (collapsed by default) */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
+
   padding: 0 18px;
+
   font-size: 14px;
   color: rgba(245, 245, 245, 0.7);
+
   transition: max-height 0.35s ease, padding 0.35s ease;
 }
 
+/* open state */
 .faq-item.active .faq-answer {
-  max-height: 200px;
+  max-height: 200px; /* enough for your answers */
   padding: 0 18px 16px 18px;
 }
 
 .faq-item.active .faq-icon {
+  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
   opacity: 1;
 }
 
-/* =========================
-   FORM
-   ========================= */
+.footer {
+  text-align:center;
+  padding:40px;
+  border-top:1px solid #222;
+}
 
 .form {
   max-width: 600px;
@@ -331,6 +274,7 @@ a {
 .form-group label {
   font-size: 14px;
   color: #cfd3dc;
+  letter-spacing: 0.2px;
 }
 
 .form input,
@@ -342,6 +286,14 @@ a {
   padding: 12px 14px;
   border-radius: 10px;
   outline: none;
+  transition: 0.2s ease;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.08);
 }
 
 .form textarea {
@@ -362,101 +314,85 @@ a {
   border: none;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-
-.footer {
-  text-align: center;
-  padding: 40px;
-  border-top: 1px solid #222;
+.form button:hover {
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  opacity: 0.9;
 }
 
-/* =========================
-   GLOBAL
-   ========================= */
+.form-note {
+  font-size: 13px;
+  color: #9aa3b2;
+  margin-top: 8px;
+}
 
 html {
+  -webkit-scroll-behavior: smooth;
   scroll-behavior: smooth;
 }
 
-/* =========================
-   MOBILE
-   ========================= */
+.nav-links a {
+  transition: -webkit-transform 0.15s ease, transform 0.15s ease, opacity 0.2s ease;
+}
 
-@media (max-width: 768px) {
+.nav-links a.clicked {
+  -webkit-transform: scale(0.92);
+  transform: scale(0.92);
+  opacity: 0.6;
+}
 
-  .nav {
-    padding: 16px 18px;
-  }
+#about {
+  scroll-margin-top: 95px;
+}
 
-  .hamburger {
-    display: flex;
-  }
+#method {
+  scroll-margin-top: 110px;
+}
 
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 18px;
+#pricing {
+  scroll-margin-top: 110px;
+}
 
-    display: none;
-    flex-direction: column;
-    gap: 10px;
+#faq {
+  scroll-margin-top: 50px;
+}
 
-    background: #0f1115;
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
-    padding: 12px;
-    width: 200px;
-  }
+#contact {
+  scroll-margin-top: 10px;
+}
 
-  .nav-links.active {
-    display: flex;
-  }
+.subsection {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
 
-  .hero {
-    padding: 90px 18px;
-  }
+.subsection h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
 
-  .hero h1 {
-    font-size: 26px;
-  }
+.subsection p, .subsection li {
+  font-size: 14px;
+  opacity: 0.7;
+  line-height: 1.6;
+}
 
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+.subsection ul {
+  padding-left: 18px;
+}
 
-  .btn,
-  .btn-secondary {
-    width: 100%;
-    text-align: center;
-  }
+.logo {
+  display: flex;
+  align-items: center;
+}
 
-  .section {
-    padding: 60px 18px;
-  }
-
-  .pricing-item {
-    max-width: 100%;
-    padding: 18px;
-  }
-
-  .form-row {
-    flex-direction: column;
-  }
-
-  input,
-  select,
-  textarea {
-    font-size: 16px;
-  }
-
-  .logo img {
-    height: 28px;
-    max-width: 140px;
-  }
+.logo img {
+  height: 30px;
+  width: auto;
+  display: block;
 }
