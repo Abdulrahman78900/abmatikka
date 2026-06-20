@@ -720,3 +720,37 @@ html {
 .footer-links a:hover {
   opacity: 1;
 }
+
+.legal-page {
+  max-width: 800px;
+  margin: 120px auto 80px auto;
+  padding: 0 20px;
+}
+
+.legal-page h1 {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.legal-page h2 {
+  font-size: 20px;
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.legal-page p,
+.legal-page li {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.legal-page ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.legal-page a {
+  text-decoration: underline;
+  opacity: 0.9;
+}
