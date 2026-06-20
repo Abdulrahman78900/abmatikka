@@ -97,8 +97,8 @@ document.querySelectorAll(".faq-question").forEach(button => {
 document.addEventListener("DOMContentLoaded", () => {
 
   const typeSelect = document.getElementById("type");
-  const cityGroup = document.getElementById("city-group");
-  const cityInput = document.getElementById("city");
+  const placeGroup = document.getElementById("place-group");
+  const placeInput = document.getElementById("place");
 
   const paymentSelect = document.getElementById("payment_method");
   const billingGroup = document.getElementById("billing-group");
@@ -106,12 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateTeachingMode() {
     if (typeSelect.value === "lahi") {
-      cityGroup.style.display = "flex";
-      cityInput.required = true;
+      placeGroup.style.display = "flex";
+      placeInput.required = true;
     } else {
-      cityGroup.style.display = "none";
-      cityInput.required = false;
-      cityInput.value = "";
+      placeGroup.style.display = "none";
+      placeInput.required = false;
+      placeInput.value = "";
     }
   }
 
