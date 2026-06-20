@@ -1,7 +1,25 @@
-// Reset scroll to top on page load/refresh
+// Reset scroll to top on page load/refresh, or scroll to anchor if present
 window.history.scrollRestoration = 'manual';
 window.addEventListener('load', () => {
-  window.scrollTo(0, 0);
+  const hash = window.location.hash;
+  
+  if (hash) {
+    // If there's an anchor, scroll to it
+    const target = document.querySelector(hash);
+    if (target) {
+      const customOffset = parseInt(target.closest('[data-offset]')?.getAttribute('data-offset')) || 90;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - customOffset;
+      setTimeout(() => {
+        window.scrollTo({
+          top,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  } else {
+    // Otherwise, scroll to top
+    window.scrollTo(0, 0);
+  }
 });
 
 // Hamburger menu toggle
