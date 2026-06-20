@@ -54,8 +54,14 @@
     <a href="#contact" class="btn-small" data-offset="10" data-key="nav_contact">Ota yhteyttä</a>
   </div>
   <div class="language-switcher">
-    <button class="lang-btn active" data-lang="fi" data-label-desktop="Suomi" data-label-mobile="FI">Suomi</button>
-    <button class="lang-btn" data-lang="en" data-label-desktop="English" data-label-mobile="EN">English</button>
+    <button class="lang-dropdown-btn" id="lang-dropdown-btn">
+      <span id="lang-display">Suomi</span>
+      <span class="lang-arrow">▼</span>
+    </button>
+    <div class="lang-dropdown-menu" id="lang-dropdown-menu">
+      <button class="lang-option active" data-lang="fi">Suomi</button>
+      <button class="lang-option" data-lang="en">English</button>
+    </div>
   </div>
 </nav>
 
@@ -301,9 +307,7 @@
     <textarea 
       id="billing_details"
       name="billing_details"
-      placeholder="
-      Etu- ja sukunimi, katuosoite, postinumero, postitoimipaikka
-      (Täytä vain jos haluat maksaa laskulla)">
+      placeholder="Etu- ja sukunimi, katuosoite, postinumero, postitoimipaikka (Täytä vain jos haluat maksaa laskulla)">
 </textarea>
   </div>
 

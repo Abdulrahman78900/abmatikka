@@ -72,58 +72,58 @@ const translations = {
     footer_copyright: "© 2026 Abdulrahman Al-Mafrachi. Kaikki oikeudet pidätetään.",
   },
   en: {
-    nav_about: "About Tutoring",
+    nav_about: "About Teaching",
     nav_pricing: "Pricing",
     nav_faq: "FAQ",
-    nav_contact: "Contact",
+    nav_contact: "Get in Touch",
     hero_title: "Math tutoring that helps you understand",
-    hero_desc: "Clear and personalized teaching for grades 1-9 in Espoo, Helsinki, Vantaa and online.",
-    hero_btn_book: "Book an intro session",
-    hero_btn_pricing: "Pricing",
-    about_title: "About Tutoring",
+    hero_desc: "Clear and personalized instruction for grades 1–9 in Espoo, Helsinki, Vantaa, and online.",
+    hero_btn_book: "Book a free intro session",
+    hero_btn_pricing: "View Pricing",
+    about_title: "About Teaching",
     about_h3_1: "AbMatikka",
     about_p1: "AbMatikka provides clear and personalized math tutoring for primary school students.",
-    about_p2: "I am currently studying in upper secondary school and offer math tutoring to elementary school students.",
-    about_p3: "I offer private math tutoring for elementary school students in Espoo, Helsinki, Vantaa and online throughout Finland.",
+    about_p2: "I am currently studying in upper secondary school and offer math tutoring to primary school students.",
+    about_p3: "I offer personalized math tutoring for primary school students in Espoo, Helsinki, Vantaa, and online throughout Finland.",
     about_h3_2: "Teaching Method",
     about_method_intro: "Teaching progresses in stages:",
-    method_1: "Baseline assessment",
-    method_2: "Problem identification",
-    method_3: "Clear step-by-step teaching",
-    method_4: "Independent learning",
+    method_1: "Assessment of current level",
+    method_2: "Identification of challenges",
+    method_3: "Clear step-by-step instruction",
+    method_4: "Independent mastery",
     about_h3_3: "Additional Information",
-    about_extra: "Teaching is available in Finnish, English and Arabic. Available in Espoo, Helsinki, Vantaa and online.",
+    about_extra: "Instruction is available in Finnish, English, and Arabic. Available in Espoo, Helsinki, Vantaa, and online.",
     pricing_title: "Pricing",
     pricing_free_title: "Intro Session",
     pricing_free_price: "45 min – Free",
-    pricing_free_desc: "First meeting and baseline assessment",
+    pricing_free_desc: "Initial consultation and assessment",
     pricing_private_title: "Private Tutoring",
     pricing_private_price: "25 € / 60 min",
-    pricing_private_desc: "Personalized math teaching",
+    pricing_private_desc: "Personalized math instruction",
     payment_methods: "Payment methods: MobilePay • Bank transfer • Cash • Invoice",
     faq_title: "Frequently Asked Questions",
-    faq_q1: "Who is the tutoring suitable for?",
-    faq_a1: "For primary school students (grades 1-9) who need help with math.",
+    faq_q1: "Who is this tutoring for?",
+    faq_a1: "For primary school students (grades 1–9) who need support with math.",
     faq_q2: "Can I get tutoring online?",
-    faq_a2: "Yes. Tutoring is available both online and in-person in Espoo, Helsinki and Vantaa.",
-    faq_q3: "What languages is teaching available in?",
-    faq_a3: "Teaching is available in Finnish, English and Arabic.",
+    faq_a2: "Yes. Tutoring is available both online and in-person in Espoo, Helsinki, and Vantaa.",
+    faq_q3: "What languages is instruction available in?",
+    faq_a3: "Instruction is available in Finnish, English, and Arabic.",
     faq_q4: "How does payment work?",
-    faq_a4: "Payment is available via MobilePay, bank transfer, cash or invoice.",
-    faq_q5: "Can I just come before an exam?",
-    faq_a5: "Yes. Individual sessions and one-time support are completely possible.",
-    faq_q6: "Do I need to be good at math?",
-    faq_a6: "No. Teaching is always adapted to your level.",
-    faq_q7: "How does the first lesson work?",
-    faq_a7: "The first intro session includes a baseline assessment and planning for future tutoring.",
-    contact_title: "Contact / Book a Session",
+    faq_a4: "Payment options include MobilePay, bank transfer, cash, and invoice.",
+    faq_q5: "Can I just get help before an exam?",
+    faq_a5: "Absolutely. Single sessions and one-time support are completely possible.",
+    faq_q6: "Do I need to be good at math already?",
+    faq_a6: "Not at all. Instruction is always tailored to your current level.",
+    faq_q7: "What happens in the first session?",
+    faq_a7: "The first session includes an assessment and planning for future tutoring.",
+    contact_title: "Get in Touch / Book a Session",
     form_student_label: "Student name*",
     form_parent_label: "Guardian name (optional)",
     form_email_label: "Email*",
     form_phone_label: "Phone number*",
     form_grade_label: "Grade level*",
     form_select_default: "Select",
-    form_type_label: "Teaching format*",
+    form_type_label: "Tutoring format*",
     form_type_onsite: "In-person",
     form_type_online: "Online",
     form_city_label: "City*",
@@ -132,8 +132,8 @@ const translations = {
     form_times_label: "Preferred times (optional)",
     form_billing_label: "Billing details (optional)",
     form_message_label: "Additional information (optional)",
-    form_note: "This inquiry does not bind you to anything.",
-    form_submit: "Send inquiry",
+    form_note: "This inquiry does not obligate you to anything.",
+    form_submit: "Send Inquiry",
     footer_copyright: "© 2026 Abdulrahman Al-Mafrachi. All rights reserved.",
   }
 };
@@ -155,13 +155,28 @@ function setLanguage(lang) {
     }
   });
 
-  // Update language buttons
-  document.querySelectorAll('.lang-btn').forEach(btn => {
+  // Update language display and dropdown
+  const langDisplay = document.getElementById('lang-display');
+  if (langDisplay) {
+    langDisplay.textContent = lang === 'fi' ? 'Suomi' : 'English';
+    langDisplay.dataset.langMobile = lang === 'fi' ? 'FI' : 'EN';
+  }
+
+  // Update language option buttons
+  document.querySelectorAll('.lang-option').forEach(btn => {
     btn.classList.remove('active');
     if (btn.getAttribute('data-lang') === lang) {
       btn.classList.add('active');
     }
   });
+
+  // Close dropdown after selection
+  const dropdown = document.getElementById('lang-dropdown-menu');
+  const dropdownBtn = document.getElementById('lang-dropdown-btn');
+  if (dropdown && dropdownBtn) {
+    dropdown.classList.remove('active');
+    dropdownBtn.classList.remove('active');
+  }
 }
 
 // Initialize language on page load
@@ -169,13 +184,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedLanguage = localStorage.getItem('preferred_language') || 'fi';
   setLanguage(savedLanguage);
 
-  // Add click listeners to language buttons
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.getAttribute('data-lang');
-      setLanguage(lang);
+  // Dropdown button toggle
+  const dropdownBtn = document.getElementById('lang-dropdown-btn');
+  const dropdownMenu = document.getElementById('lang-dropdown-menu');
+
+  if (dropdownBtn && dropdownMenu) {
+    dropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownBtn.classList.toggle('active');
+      dropdownMenu.classList.toggle('active');
     });
-  });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownBtn.classList.remove('active');
+        dropdownMenu.classList.remove('active');
+      }
+    });
+
+    // Language option selection
+    document.querySelectorAll('.lang-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        setLanguage(lang);
+      });
+    });
+  }
 });
 
 // Hamburger menu toggle
