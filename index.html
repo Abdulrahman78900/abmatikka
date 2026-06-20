@@ -38,6 +38,7 @@
     <a href="#pricing" data-offset="110" data-key="nav_pricing">Hinnasto</a>
     <a href="#faq" data-offset="65" data-key="nav_faq">UKK</a>
     <a href="#contact" class="btn-small" data-offset="10" data-key="nav_contact">Ota yhteyttä</a>
+    <a href="#booking" class="btn-small" data-offset="10" data-key="nav_booking">Varaa tunti</a>
   </div>
 </nav>
 
@@ -204,113 +205,201 @@
         Ensimmäinen tutustumistunti sisältää lähtötason kartoituksen ja suunnitelman tekemisen tulevaa opetusta varten.
       </div>
     </div>
-    <p class="faq-note" data-key="faq_note">
-      Eikö vastausta löytynyt? Ota yhteyttä: ab.almafrachi@gmail.com
-    </p>
-  </div>
-</section>
-</section>
-
-<!-- CONTACT / FORM -->
-<section id="contact" class="section">
-  <h2 data-key="contact_title">Ota yhteyttä / Varaa tunti</h2>
-
-<form action="https://formsubmit.co/c6b9ec2ff8235d86687b33f1105c2b4b" method="POST">
-
-  <input type="hidden" name="_next" value="https://ab-almafrachi.github.io/abmatikka/kiitos.html">
-  <input type="hidden" name="_template" value="basic">
-  <input type="hidden" name="_captcha" value="false">
-
-  <div class="form-group">
-    <label for="student_name" data-key="form_student_label">Oppilaan nimi*</label>
-    <input id="student_name" name="student_name" type="text" required>
-  </div>
-
-  <div class="form-group">
-    <label for="parent_name" data-key="form_parent_label">Huoltajan nimi (valinnainen)</label>
-    <input id="parent_name" name="parent_name" type="text">
-  </div>
-
-  <div class="form-group">
-    <label for="email" data-key="form_email_label">Sähköposti*</label>
-    <input id="email" name="email" type="email" required>
-  </div>
-
-  <div class="form-group">
-    <label for="phone" data-key="form_phone_label">Puhelinnumero*</label>
-    <input id="phone" name="phone" type="tel" required>
-  </div>
-
-  <div class="form-group">
-    <label for="grade" data-key="form_grade_label">Luokka-aste*</label>
-    <select id="grade" name="grade" required>
-      <option value="" data-key="form_select_default">Valitse</option>
-      <option>1</option><option>2</option><option>3</option>
-      <option>4</option><option>5</option><option>6</option>
-      <option>7</option><option>8</option><option>9</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="type" data-key="form_type_label">Opetusmuoto*</label>
-    <select id="type" name="type" required>
-    <option value="" data-key="form_select_default">Valitse</option>    
-      <option data-key="form_type_onsite">Lähiopetus</option>
-      <option data-key="form_type_online">Etäopetus</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="city" data-key="form_city_label">Kaupunki*</label>
-    <input id="city" name="city" type="text" required placeholder="Helsinki, Espoo, Vantaa...">
-  </div>
-
-  <div class="form-group">
-    <label for="issues" data-key="form_issues_label">Suurimmat haasteet matematiikassa*</label>
-    <textarea id="issues" name="issues" required></textarea>
-  </div>
-
-  <div class="form-row">
-    <div class="form-group">
-      <label for="days" data-key="form_days_label">Toivotut päivät (valinnainen)</label>
-      <input id="days" name="days" type="text">
-    </div>
-
-    <div class="form-group">
-      <label for="times" data-key="form_times_label">Toivotut ajat (valinnainen)</label>
-      <input id="times" name="times" type="text">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="billing_details" data-key="form_billing_label">
-      Laskutustiedot (valinnainen)
-    </label>
-    <textarea 
-      id="billing_details"
-      name="billing_details"
-      placeholder="Matti Virtanen&#10;Esimerkkikatu 1 A 2&#10;12345 Helsinki&#10;(Täytä vain jos haluat maksaa laskulla)"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label for="message" data-key="form_message_label">Lisätiedot (valinnainen)</label>
-    <textarea id="message" name="message"></textarea>
-  </div>
-
-  <p class="form-note" data-key="form_note">
-  Yhteydenotto ei sido sinua mihinkään.
+  <p class="faq-note">
+     Eikö vastausta löytynyt?
+    <a href="#contact" class="btn-small" data-offset="10">Ota yhteyttä</a>
   </p>
-  <div class="form-group consent">
+  </div>
+</section>
+</section>
+
+<!-- APPOINTMENT FORM -->
+<section id="booking" class="section">
+  <h2 data-key="booking_title">Varaa tunti</h2>
+
+<form action="https://formsubmit.co/ab.almafrachi@gmail.com" method="POST" class="form" accept-charset="UTF-8">
+<input type="hidden" name="_subject" value="Uusi tuntivaraus AbMatikka-sivustolta">
+<input type="hidden" name="_template" value="basic">
+<input type="hidden" name="_next" value="https://ab-almafrachi.github.io/abmatikka/kiitos.html">
+<input type="hidden" name="_captcha" value="false">
+
+<div class="form-group">
+  <label for="student_name">Oppilaan nimi (valinnainen)</label>
+  <input id="student_name" name="student_name" type="text" placeholder="Esim. Matti Virtanen">
+</div>
+
+<div class="form-group">
+  <label for="guardian_name">Huoltajan nimi*</label>
+  <input id="guardian_name" name="guardian_name" type="text" required placeholder="Esim. Maija Virtanen">
+</div>
+
+<div class="form-group">
+  <label for="email">Sähköposti*</label>
+  <input id="email" name="email" type="email" required placeholder="esimerkki@domain.com">
+</div>
+
+<div class="form-group">
+  <label for="phone">Puhelinnumero*</label>
+  <input id="phone" name="phone" type="tel" required placeholder="0401234567">
+</div>
+
+<div class="form-group">
+  <label for="grade">Luokka-aste*</label>
+  <select id="grade" name="grade" required>
+    <option value="">Valitse</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="type">Opetusmuoto*</label>
+  <select id="type" name="type" required>
+    <option value="">Valitse</option>
+    <option value="lahi">Lähiopetus</option>
+    <option value="eta">Etäopetus</option>
+  </select>
+</div>
+
+<div class="form-group" id="city-group" style="display:none;">
+  <label for="city">Opetuspaikka*</label>
+  <input id="city" name="city" type="text" placeholder="Esim. kirjasto, koti tai muu paikka">
+</div>
+
+<div class="form-group">
+  <label for="lesson_type">Varaus koskee*</label>
+  <select id="lesson_type" name="lesson_type" required>
+    <option value="">Valitse</option>
+    <option value="free_intro">Ilmainen tutustumistunti (45 min)</option>
+    <option value="private_lesson">Yksityisopetustunti (25 €/h)</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="issues">Missä matematiikan aiheissa tarvitset eniten apua?*</label>
+  <textarea
+    id="issues"
+    name="issues"
+    required
+    placeholder="Esim. murtoluvut, prosenttilaskut, yhtälöt, geometria, sanalliset tehtävät tai kokeisiin valmistautuminen."></textarea>
+</div>
+
+<div class="form-row">
+
+  <div class="form-group">
+    <label for="days">Toivotut päivät (valinnainen)</label>
+    <input
+      id="days"
+      name="days"
+      type="text"
+      placeholder="Esim. ma, ke ja pe">
+  </div>
+
+  <div class="form-group">
+    <label for="times">Toivotut ajat (valinnainen)</label>
+    <input
+      id="times"
+      name="times"
+      type="text"
+      placeholder="Esim. klo 16–19">
+  </div>
+
+</div>
+
+<div class="form-group">
+  <label for="payment_method">Maksutapa*</label>
+  <select id="payment_method" name="payment_method" required>
+    <option value="">Valitse</option>
+    <option value="mobilepay">MobilePay</option>
+    <option value="banktransfer">Tilisiirto</option>
+    <option value="cash">Käteinen</option>
+    <option value="invoice">Lasku</option>
+  </select>
+</div>
+
+<div class="form-group" id="billing-group" style="display:none;">
+  <label for="billing_details">Laskutustiedot</label>
+  <textarea id="billing_details" name="billing_details" placeholder="Matti Virtanen&#10;Esimerkkikatu 1 A 2&#10;02100 Helsinki"></textarea>
+</div>
+
+<div class="form-group">
+  <label for="message">Lisätiedot (valinnainen)</label>
+  <textarea
+    id="message"
+    name="message"
+    placeholder="Esim. tuleva koe, tavoitteet, erityistoiveet, oppimiseen liittyvät huomiot tai muuta hyödyllistä tietoa."></textarea>
+</div>
+
+<p class="form-note">
+  Varauspyyntö ei vielä muodosta sitovaa sopimusta. Vahvistan ajan erikseen yhteydenoton jälkeen.
+</p>
+
+<div class="form-group consent">
   <label>
     <input type="checkbox" name="consent" required>
-    Hyväksyn 
-    <a href="terms.html" target="_blank">käyttöehdot</a> 
-    ja 
+    Hyväksyn
+    <a href="terms.html" target="_blank">käyttöehdot</a>
+    ja
     <a href="privacy.html" target="_blank">tietosuojaselosteen</a>.
   </label>
 </div>
-  <button type="submit" data-key="form_submit">Lähetä yhteydenotto</button>
+
+<button type="submit">Lähetä varauspyyntö</button>
 </form>
+</section>
+
+<section id="contact" class="section">
+  <h2>Ota yhteyttä</h2>
+
+  <form action="https://formsubmit.co/ab.almafrachi@gmail.com" method="POST" class="form">
+
+    <input type="hidden" name="_subject" value="Uusi yhteydenotto AbMatikka-sivustolta">
+    <input type="hidden" name="_template" value="basic">
+    <input type="hidden" name="_next" value="https://ab-almafrachi.github.io/abmatikka/kiitos.html">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div class="form-group">
+      <label for="name">Nimi*</label>
+      <input id="name" name="name" type="text" required placeholder="Esim. Maija Virtanen">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Sähköposti*</label>
+      <input id="email" name="email" type="email" required placeholder="esimerkki@domain.com">
+    </div>
+
+    <div class="form-group">
+      <label for="topic">Aihe</label>
+      <select id="topic" name="topic">
+        <option value="general">Yleinen kysymys</option>
+        <option value="pricing">Hinnat</option>
+        <option value="lesson">Opetukseen liittyvä kysymys</option>
+        <option value="other">Muu</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Viesti*</label>
+      <textarea id="message" name="message" required placeholder="Kirjoita viestisi tähän..."></textarea>
+    </div>
+
+    <div class="form-group consent">
+      <label>
+        <input type="checkbox" name="consent" required>
+        Hyväksyn <a href="terms.html" target="_blank">käyttöehdot</a> ja
+        <a href="privacy.html" target="_blank">tietosuojaselosteen</a>.
+      </label>
+    </div>
+
+    <button type="submit">Lähetä viesti</button>
+  </form>
 </section>
 
 <!-- FOOTER -->

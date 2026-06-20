@@ -93,3 +93,43 @@ document.querySelectorAll(".faq-question").forEach(button => {
     faqItem.classList.toggle("active");
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const typeSelect = document.getElementById("type");
+  const cityGroup = document.getElementById("city-group");
+  const cityInput = document.getElementById("city");
+
+  const paymentSelect = document.getElementById("payment_method");
+  const billingGroup = document.getElementById("billing-group");
+  const billingInput = document.getElementById("billing_details");
+
+  function updateTeachingMode() {
+    if (typeSelect.value === "lahi") {
+      cityGroup.style.display = "flex";
+      cityInput.required = true;
+    } else {
+      cityGroup.style.display = "none";
+      cityInput.required = false;
+      cityInput.value = "";
+    }
+  }
+
+  function updatePaymentMethod() {
+    if (paymentSelect.value === "invoice") {
+      billingGroup.style.display = "flex";
+      billingInput.required = true;
+    } else {
+      billingGroup.style.display = "none";
+      billingInput.required = false;
+      billingInput.value = "";
+    }
+  }
+
+  typeSelect.addEventListener("change", updateTeachingMode);
+  paymentSelect.addEventListener("change", updatePaymentMethod);
+
+  updateTeachingMode();
+  updatePaymentMethod();
+
+});
