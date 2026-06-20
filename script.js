@@ -25,7 +25,12 @@ document.querySelectorAll("a[href^='#']").forEach(link => {
     e.preventDefault();
 
     const target = document.querySelector(targetId);
-    if (!target) return;
+    
+    // If target doesn't exist on this page, redirect to index.html with anchor
+    if (!target) {
+      window.location.href = "index.html" + targetId;
+      return;
+    }
 
     // Get offset from data attribute, default to 90px
     const customOffset = parseInt(link.getAttribute("data-offset")) || 90;
