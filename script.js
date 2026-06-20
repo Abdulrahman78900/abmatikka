@@ -276,3 +276,38 @@ document.querySelectorAll(".faq-question").forEach(button => {
     faqItem.classList.toggle("active");
   });
 });
+
+document.getElementById('math-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const formUrl = 'https://google.com';
+  const formData = new FormData();
+
+  formData.append('entry.1302590581', document.getElementById('oppilaan_nimi').value);
+  formData.append('entry.314431926', document.getElementById('huoltajan_nimi').value);
+  formData.append('entry.707617712', document.getElementById('sahkoposti').value);
+  formData.append('entry.1020283486', document.getElementById('puhelinnumero').value);
+  formData.append('entry.414858150', document.getElementById('luokka_aste').value);
+  formData.append('entry.1223577654', document.getElementById('opetusmuoto').value);
+  formData.append('entry.1525690851', document.getElementById('kaupunki').value);
+  formData.append('entry.942588298', document.getElementById('haasteet').value);
+  formData.append('entry.1306743378', document.getElementById('paivat').value);
+  formData.append('entry.1089046870', document.getElementById('ajat').value);
+  formData.append('entry.597056966', document.getElementById('laskutus').value);
+  formData.append('entry.2086051619', document.getElementById('lisatiedot').value);
+
+  fetch(formUrl, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+  })
+  .then(() => {
+    alert('Kiitos! Tiedot on lähetetty onnistuneesti.');
+    document.getElementById('math-form').reset();
+  })
+  .catch(error => {
+    console.error('Submission error:', error);
+    alert('Jotain meni vikaan. Yritä uudelleen.');
+  });
+});
+

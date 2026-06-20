@@ -237,90 +237,87 @@
 <section id="contact" class="section">
   <h2 data-key="contact_title">Ota yhteyttä / Varaa tunti</h2>
 
-<form action="https://formbold.com/s/9RyKm" method="POST" class="form" accept-charset="UTF-8">
+  <!-- GOOGLE FORMS BACKEND FORM -->
+  <form id="math-form" class="form">
 
-  <div class="form-group">
-    <label for="student_name" data-key="form_student_label">Oppilaan nimi*</label>
-    <input id="student_name" name="student_name" type="text" required>
-  </div>
-
-  <div class="form-group">
-    <label for="parent_name" data-key="form_parent_label">Huoltajan nimi (valinnainen)</label>
-    <input id="parent_name" name="parent_name" type="text">
-  </div>
-
-  <div class="form-group">
-    <label for="email" data-key="form_email_label">Sähköposti*</label>
-    <input id="email" name="email" type="email" required>
-  </div>
-
-  <div class="form-group">
-    <label for="phone" data-key="form_phone_label">Puhelinnumero*</label>
-    <input id="phone" name="phone" type="tel" required>
-  </div>
-
-  <div class="form-group">
-    <label for="grade" data-key="form_grade_label">Luokka-aste*</label>
-    <select id="grade" name="grade" required>
-      <option value="" data-key="form_select_default">Valitse</option>
-      <option>1</option><option>2</option><option>3</option>
-      <option>4</option><option>5</option><option>6</option>
-      <option>7</option><option>8</option><option>9</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="type" data-key="form_type_label">Opetusmuoto*</label>
-    <select id="type" name="type" required>
-    <option value="" data-key="form_select_default">Valitse</option>    
-      <option data-key="form_type_onsite">Lähiopetus</option>
-      <option data-key="form_type_online">Etäopetus</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="city" data-key="form_city_label">Kaupunki*</label>
-    <input id="city" name="city" type="text" required placeholder="Helsinki, Espoo, Vantaa...">
-  </div>
-
-  <div class="form-group">
-    <label for="issues" data-key="form_issues_label">Suurimmat haasteet matematiikassa*</label>
-    <textarea id="issues" name="issues" required></textarea>
-  </div>
-
-  <div class="form-row">
     <div class="form-group">
-      <label for="days" data-key="form_days_label">Toivotut päivät (valinnainen)</label>
-      <input id="days" name="days" type="text">
+      <label for="oppilaan_nimi">Oppilaan nimi *</label>
+      <input type="text" id="oppilaan_nimi" required>
     </div>
 
     <div class="form-group">
-      <label for="times" data-key="form_times_label">Toivotut ajat (valinnainen)</label>
-      <input id="times" name="times" type="text">
+      <label for="huoltajan_nimi">Huoltajan nimi *</label>
+      <input type="text" id="huoltajan_nimi" required>
     </div>
-  </div>
 
-  <div class="form-group">
-    <label for="billing_details" data-key="form_billing_label">
-      Laskutustiedot (valinnainen)
-    </label>
-    <textarea 
-      id="billing_details"
-      name="billing_details"
-      placeholder="Etu- ja sukunimi, katuosoite, postinumero, postitoimipaikka (Täytä vain jos haluat maksaa laskulla)">
-</textarea>
-  </div>
+    <div class="form-group">
+      <label for="sahkoposti">Sähköposti *</label>
+      <input type="email" id="sahkoposti" required>
+    </div>
 
-  <div class="form-group">
-    <label for="message" data-key="form_message_label">Lisätiedot (valinnainen)</label>
-    <textarea id="message" name="message"></textarea>
-  </div>
+    <div class="form-group">
+      <label for="puhelinnumero">Puhelinnumero *</label>
+      <input type="tel" id="puhelinnumero" required>
+    </div>
 
-  <p class="form-note" data-key="form_note">
-  Yhteydenotto ei sido sinua mihinkään.
-</p>
-  <button type="submit" data-key="form_submit">Lähetä yhteydenotto</button>
-</form>
+    <div class="form-group">
+      <label for="luokka_aste">Luokka-aste *</label>
+      <select id="luokka_aste" required>
+        <option value="" disabled selected>Valitse luokka-aste</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="opetusmuoto">Opetusmuoto *</label>
+      <select id="opetusmuoto" required>
+        <option value="" disabled selected>Valitse opetusmuoto</option>
+        <option value="Lähiopetus">Lähiopetus</option>
+        <option value="Etäopetus">Etäopetus</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="kaupunki">Kaupunki *</label>
+      <input type="text" id="kaupunki" required>
+    </div>
+
+    <div class="form-group">
+      <label for="haasteet">Suurimmat haasteet matematiikassa *</label>
+      <textarea id="haasteet" rows="4" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="paivat">Toivotut päivät (valinnainen)</label>
+      <input type="text" id="paivat">
+    </div>
+
+    <div class="form-group">
+      <label for="ajat">Toivotut ajat (valinnainen)</label>
+      <input type="text" id="ajat">
+    </div>
+
+    <div class="form-group">
+      <label for="laskutus">Laskutustiedot (valinnainen)</label>
+      <textarea id="laskutus" rows="2"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="lisatiedot">Lisätiedot (valinnainen)</label>
+      <textarea id="lisatiedot" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn">Lähetä ilmoittautuminen</button>
+
+  </form>
 </section>
 
 <!-- FOOTER -->
