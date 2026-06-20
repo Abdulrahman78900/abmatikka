@@ -16,6 +16,8 @@ window.addEventListener('load', () => {
         });
       }, 100);
     }
+    // Remove the hash from URL
+    window.history.replaceState(null, '', window.location.pathname);
   } else {
     // Otherwise, scroll to top
     window.scrollTo(0, 0);
