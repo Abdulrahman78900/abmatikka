@@ -1,0 +1,159 @@
+```html
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kiitos yhteydenotosta | AbMatikka</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
+
+body {
+  background: #0f1115;
+  color: #f5f5f5;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 20%, #1a1f2e, transparent 40%),
+    radial-gradient(circle at 80% 70%, #1b2a3a, transparent 40%);
+
+  opacity: 0.8;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+
+  width: 90%;
+  max-width: 650px;
+
+  text-align: center;
+
+  padding: 40px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(8px);
+}
+
+.checkmark {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+
+p {
+  color: rgba(245,245,245,0.75);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: #ffffff;
+  color: #0f1115;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #f5f5f5;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 28px 22px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+  <div class="checkmark">✓</div>
+
+  <h1>Kiitos yhteydenotosta!</h1>
+
+  <p>
+    Viestisi on vastaanotettu onnistuneesti.
+    Pyrin vastaamaan mahdollisimman pian.
+  </p>
+
+  <div class="button-group">
+    <a href="/" class="btn btn-primary">
+      Takaisin etusivulle
+    </a>
+
+    <button onclick="history.back()" class="btn btn-secondary">
+      Takaisin edelliselle sivulle
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
+```
