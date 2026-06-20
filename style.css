@@ -444,7 +444,6 @@ html {
     left: 0;
     right: 0;
     background: #0f1115;
-    border-bottom: 1px solid #222;
     flex-direction: column;
     gap: 0;
     max-height: 0;
