@@ -616,9 +616,8 @@ html {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
-  box-sizing: border-box;
+  align-items: flex-start;
+  padding: 120px 20px 60px;
 }
 
 .thankyou-card {
