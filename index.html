@@ -16,8 +16,12 @@
   <meta property="og:description" content="Yksilöllistä matematiikan opetusta Espoo, Helsinki, Vantaa ja etänä." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0f1115" />
+  <meta property="og:image" content="https://ab-almafrachi.github.io/abmatikka/images/logo.png">
+  <meta property="og:url" content="https://ab-almafrachi.github.io/abmatikka/">
+  <meta property="og:image:alt" content="AbMatikka matematiikan yksityisopetus">
   
   <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://ab-almafrachi.github.io/abmatikka/">
 </head>
   
 <body>
@@ -34,11 +38,11 @@
   </button>
   <div class="nav-links" id="nav-links">
     <a href="index.html" onclick="setTimeout(() => window.scrollTo(0,0), 0)">Etusivu</a>
-    <a href="#about" data-offset="95" data-key="nav_about">Tietoa opetuksesta</a>
-    <a href="#pricing" data-offset="110" data-key="nav_pricing">Hinnasto</a>
-    <a href="#faq" data-offset="65" data-key="nav_faq">UKK</a>
-    <a href="#contact" class="btn-small" data-offset="10" data-key="nav_contact">Ota yhteyttä</a>
-    <a href="#booking" class="btn-small" data-offset="10" data-key="nav_booking">Varaa tunti</a>
+    <a href="#about" data-key="nav_about">Tietoa opetuksesta</a>
+    <a href="#pricing" data-key="nav_pricing">Hinnasto</a>
+    <a href="#faq" data-key="nav_faq">UKK</a>
+    <a href="#contact" class="btn-small" data-key="nav_contact">Ota yhteyttä</a>
+    <a href="#booking" class="btn-small" data-key="nav_booking">Varaa tunti</a>
   </div>
 </nav>
 
@@ -72,7 +76,7 @@
   </p>
 
   <p data-key="about_p2">
-    Opiskelen tällä hetkellä lukiossa ja tarjoan matematiikan tukiopetusta peruskoululaisille.
+    Opiskelen lukiossa ja tarjoan matematiikan tukiopetusta peruskoulun oppilaille. Opetus perustuu selkeisiin vaiheittaisiin selityksiin ja oppilaan yksilöllisiin tarpeisiin.
   </p>
 
   <p data-key="about_p3">
@@ -102,6 +106,17 @@
       Saatavilla Espoossa, Helsingissä, Vantaalla sekä etänä.
     </p>
   </div>
+
+  <section class="subsection">
+  <h3>Miksi valita AbMatikka?</h3>
+
+  <ul class="benefits-list">
+    <li>Opetus suunnitellaan oppilaan tavoitteiden ja lähtötason mukaan</li>
+    <li>Ensimmäinen 45 minuutin tutustumistunti ilmainen</li>
+    <li>Opetus suomeksi, englanniksi ja arabiaksi</li>
+    <li>Saatavilla etänä sekä Espoossa, Helsingissä ja Vantaalla</li>
+  </ul>
+</section>
 
 </section>
 
@@ -207,7 +222,7 @@
     </div>
   <p class="faq-note">
      Eikö vastausta löytynyt?
-    <a href="#contact" class="btn-small" data-offset="10">Ota yhteyttä</a>
+    <a href="#contact" class="btn-small">Ota yhteyttä</a>
   </p>
   </div>
 </section>
@@ -224,8 +239,8 @@
 <input type="hidden" name="_captcha" value="false">
 
 <div class="form-group">
-  <label for="student_name">Oppilaan nimi (valinnainen)</label>
-  <input id="student_name" name="student_name" type="text" placeholder="Esim. Matti Virtanen">
+  <label for="student_name">Oppilaan etunimi (valinnainen)</label>
+  <input id="student_name" name="student_name" type="text" placeholder="Esim. Matti">
 </div>
 
 <div class="form-group">
@@ -234,12 +249,12 @@
 </div>
 
 <div class="form-group">
-  <label for="email">Sähköposti*</label>
+  <label for="booking_email">Sähköposti*</label>
   <input id="booking_email" name="email" type="email" required placeholder="esimerkki@domain.com">
 </div>
 
 <div class="form-group">
-  <label for="phone">Puhelinnumero*</label>
+  <label for="booking_phone">Puhelinnumero*</label>
   <input id="booking_phone" name="phone" type="tel" required placeholder="0401234567">
 </div>
 
@@ -247,15 +262,15 @@
   <label for="grade">Luokka-aste*</label>
   <select id="grade" name="grade" required>
     <option value="">Valitse</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-    <option>6</option>
-    <option>7</option>
-    <option>8</option>
-    <option>9</option>
+    <option>1. luokka</option>
+    <option>2. luokka</option>
+    <option>3. luokka</option>
+    <option>4. luokka</option>
+    <option>5. luokka</option>
+    <option>6. luokka</option>
+    <option>7. luokka</option>
+    <option>8. luokka</option>
+    <option>9. luokka</option>
   </select>
 </div>
 
@@ -274,7 +289,7 @@
 </div>
 
 <div class="form-group">
-  <label for="lesson_type">Varaus koskee*</label>
+  <label for="lesson_type">Valitse tunti*</label>
   <select id="lesson_type" name="lesson_type" required>
     <option value="">Valitse</option>
     <option value="free_intro">Ilmainen tutustumistunti (45 min)</option>
@@ -288,6 +303,7 @@
     id="issues"
     name="issues"
     required
+    maxlength="1000"
     placeholder="Esim. murtoluvut, prosenttilaskut, yhtälöt, geometria, sanalliset tehtävät tai kokeisiin valmistautuminen."></textarea>
 </div>
 
@@ -318,11 +334,12 @@
   <textarea
     id="message"
     name="message"
+    maxlength="1500"
     placeholder="Esim. tuleva koe, tavoitteet, erityistoiveet, oppimiseen liittyvät huomiot tai muuta hyödyllistä tietoa."></textarea>
 </div>
 
 <p class="form-note">
-  Varauspyyntö ei vielä muodosta sitovaa sopimusta. Vahvistamme ajan erikseen yhteydenoton jälkeen.
+  Varauspyyntö ei vielä muodosta sitovaa sopimusta. Vahvistan ajan erikseen yhteydenoton jälkeen.
 </p>
 
 <div class="form-group consent">
@@ -388,14 +405,31 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p data-key="footer_copyright">© 2026 Abdulrahman Al-Mafrachi. Kaikki oikeudet pidätetään.</p>
-  <p>Y-tunnus: 3632704-8</p>
+
+  <div class="footer-top">
+    <p class="footer-copy">
+      © 2026 Abdulrahman Al-Mafrachi. Kaikki oikeudet pidätetään.
+    </p>
+    <p class="footer-id">
+      Y-tunnus: 3632704-8
+    </p>
+  </div>
+
+  <div class="footer-cta">
+    <a href="#booking" class="footer-btn primary">
+      Varaa ilmainen tutustumistunti
+    </a>
+    <a href="#contact" class="footer-btn secondary">
+      Ota yhteyttä
+    </a>
+  </div>
 
   <div class="footer-links">
-      <a href="terms.html">Käyttöehdot</a>
-      <span>•</span>
-      <a href="privacy.html">Tietosuojaseloste</a>
-    </div>
+    <a href="terms.html">Käyttöehdot</a>
+    <span class="divider">•</span>
+    <a href="privacy.html">Tietosuojaseloste</a>
+  </div>
+
 </footer>
 
 <script src="script.js"></script>

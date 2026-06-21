@@ -1,135 +1,81 @@
-// Reset scroll to top on page load/refresh, or scroll to anchor if present
-window.history.scrollRestoration = 'manual';
-window.addEventListener('load', () => {
-  const hash = window.location.hash;
-  
-  if (hash) {
-    // If there's an anchor, scroll to it
-    const target = document.querySelector(hash);
-    if (target) {
-      const customOffset = parseInt(target.closest('[data-offset]')?.getAttribute('data-offset')) || 90;
-      const top = target.getBoundingClientRect().top + window.pageYOffset - customOffset;
-      setTimeout(() => {
-        window.scrollTo({
-          top,
-          behavior: 'smooth'
-        });
-      }, 100);
-    }
-    
-    // Remove the hash from the URL
-    window.history.replaceState(null, null, window.location.pathname);
-  } else {
-    // Otherwise, scroll to top
-    window.scrollTo(0, 0);
-  }
+// Hamburger menu
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+if (hamburger && navLinks) {
+hamburger.addEventListener("click", () => {
+hamburger.classList.toggle("active");
+navLinks.classList.toggle("active");
 });
-
-// Hamburger menu toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-
-if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
 }
 
-// Smooth scroll navigation with configurable offsets
-document.querySelectorAll("a[href^='#']").forEach(link => {
-  link.addEventListener("click", (e) => {
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", e => {
     const targetId = link.getAttribute("href");
 
-    if (!targetId.startsWith("#")) return;
+    if (!targetId || targetId === "#") return;
+
+    const target = document.querySelector(targetId);
+    if (!target) return;
 
     e.preventDefault();
 
-    const target = document.querySelector(targetId);
-    
-    // If target doesn't exist on this page, redirect to index.html with anchor
-    if (!target) {
-      window.location.href = "index.html" + targetId;
-      return;
-    }
-
-    // Get offset from data attribute, default to 90px
-    const customOffset = parseInt(link.getAttribute("data-offset")) || 90;
-
-    const top = target.getBoundingClientRect().top + window.pageYOffset - customOffset;
-
-    window.scrollTo({
-      top,
-      behavior: "smooth"
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
 
-    link.classList.add("clicked");
-    setTimeout(() => link.classList.remove("clicked"), 200);
-
-    // Close hamburger menu on mobile when a link is clicked
+    // close mobile menu
     if (hamburger && navLinks) {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
     }
   });
 });
 
-// FAQ toggle functionality
+// FAQ accordion
 document.querySelectorAll(".faq-question").forEach(button => {
-  button.addEventListener("click", (e) => {
-    const faqItem = button.closest(".faq-item");
-    if (!faqItem) return;
+button.addEventListener("click", () => {
+const faqItem = button.closest(".faq-item");
 
-    const isActive = faqItem.classList.contains("active");
-    
-    // Close all other FAQ items
-    document.querySelectorAll(".faq-item.active").forEach(item => {
-      if (item !== faqItem) {
-        item.classList.remove("active");
-      }
-    });
-    
-    // Toggle current FAQ item
-    faqItem.classList.toggle("active");
-  });
+```
+if (!faqItem) return;
+
+document.querySelectorAll(".faq-item.active").forEach(item => {
+  if (item !== faqItem) {
+    item.classList.remove("active");
+  }
 });
 
+faqItem.classList.toggle("active");
+```
+
+});
+});
+
+// Booking form logic
 document.addEventListener("DOMContentLoaded", () => {
+const typeSelect = document.getElementById("type");
+const placeGroup = document.getElementById("place-group");
+const placeInput = document.getElementById("place");
 
-  const typeSelect = document.getElementById("type");
-  const placeGroup = document.getElementById("place-group");
-  const placeInput = document.getElementById("place");
+if (typeSelect && placeGroup && placeInput) {
+function updateTeachingMode() {
+if (typeSelect.value === "lahi") {
+placeGroup.style.display = "flex";
+placeInput.required = true;
+} else {
+placeGroup.style.display = "none";
+placeInput.required = false;
+placeInput.value = "";
+}
+}
 
-  const paymentSelect = document.getElementById("payment_method");
-  const billingGroup = document.getElementById("billing-group");
-  const billingInput = document.getElementById("billing_details");
+```
+typeSelect.addEventListener("change", updateTeachingMode);
 
-  function updateTeachingMode() {
-    if (typeSelect.value === "lahi") {
-      placeGroup.style.display = "flex";
-      placeInput.required = true;
-    } else {
-      placeGroup.style.display = "none";
-      placeInput.required = false;
-      placeInput.value = "";
-    }
-  }
+updateTeachingMode();
+```
 
-  function updatePaymentMethod() {
-    if (paymentSelect.value === "invoice") {
-      billingGroup.style.display = "flex";
-      billingInput.required = true;
-    } else {
-      billingGroup.style.display = "none";
-      billingInput.required = false;
-      billingInput.value = "";
-    }
-  }
-
-  typeSelect.addEventListener("change", updateTeachingMode);
-  paymentSelect.addEventListener("change", updatePaymentMethod);
-
-  updateTeachingMode();
-  updatePaymentMethod();
-
+}
 });
