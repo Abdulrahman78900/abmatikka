@@ -35,22 +35,13 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 // FAQ accordion
 document.querySelectorAll(".faq-question").forEach(button => {
-button.addEventListener("click", () => {
-const faqItem = button.closest(".faq-item");
+  button.addEventListener("click", () => {
+    const faqItem = button.closest(".faq-item");
 
-```
-if (!faqItem) return;
+    if (!faqItem) return;
 
-document.querySelectorAll(".faq-item.active").forEach(item => {
-  if (item !== faqItem) {
-    item.classList.remove("active");
-  }
-});
-
-faqItem.classList.toggle("active");
-```
-
-});
+    faqItem.classList.toggle("active");
+  });
 });
 
 // Booking form logic
