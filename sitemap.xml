@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://sitemaps.org">
+  <!-- Main Page -->
   <url>
     <loc>https://ab-almafrachi.github.io/abmatikka/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://ab-almafrachi.github.io/abmatikka/privacy.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://ab-almafrachi.github.io/abmatikka/terms.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
