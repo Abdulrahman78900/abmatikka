@@ -7,6 +7,9 @@
   <title>Matematiikan yksityisopetus Espoo, Helsinki ja Vantaa | AbMatikka</title>
   <meta name="description" content="Matematiikan yksityisopetusta peruskoulun 1.–9. luokille Espoossa, Helsingissä, Vantaalla ja etänä. Ensimmäinen tutustumistunti ilmainen." />
   <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+  
+  <!-- Favicons for browsers and Google Search Bot -->
+  <link rel="icon" type="image/png" sizes="48x48" href="images/icons/favicon-48x48.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
   <link rel="manifest" href="images/icons/site.webmanifest">
@@ -23,35 +26,43 @@
   <link rel="stylesheet" href="style.css">
   <link rel="canonical" href="https://ab-almafrachi.github.io/abmatikka/">
 
-  <!-- Local Business Schema Markup for Google Local SEO -->
+  <!-- Combined Site Name and Local Business Schema for Google -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "AbMatikka",
-    "image": "https://ab-almafrachi.github.io/abmatikka/images/logo.png",
-    "url": "https://ab-almafrachi.github.io/abmatikka/",
-    "priceRange": "$$",
-    "description": "Matematiikan yksityisopetusta peruskoulun 1.–9. luokille Espoossa, Helsingissä, Vantaalla ja etänä.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Espoo",
-      "addressRegion": "Uusimaa",
-      "addressCountry": "FI"
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AbMatikka",
+      "url": "https://ab-almafrachi.github.io/abmatikka/"
     },
-    "areaServed": [
-      {"@type": "City", "name": "Espoo"},
-      {"@type": "City", "name": "Helsinki"},
-      {"@type": "City", "name": "Vantaa"}
-    ],
-    "makesOffer": {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Matematiikan yksityisopetus"
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "AbMatikka",
+      "image": "https://ab-almafrachi.github.io/abmatikka/images/logo.png",
+      "url": "https://ab-almafrachi.github.io/abmatikka/",
+      "priceRange": "$$",
+      "description": "Matematiikan yksityisopetusta peruskoulun 1.–9. luokille Espoossa, Helsingissä, Vantaalla ja etänä.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Espoo",
+        "addressRegion": "Uusimaa",
+        "addressCountry": "FI"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Espoo"},
+        {"@type": "City", "name": "Helsinki"},
+        {"@type": "City", "name": "Vantaa"}
+      ],
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Matematiikan yksityisopetus"
+        }
       }
     }
-  }
+  ]
   </script>
 </head>
   
